@@ -8,6 +8,7 @@ const createSquare = () => {
   createSquare.style.height = `${600 / gridSize}px`;
   createSquare.style.width = `${600 / gridSize}px`;
 };
+
 const createGrid = () => {
   for (let i = 0; i < gridSize ** 2; i++) {
     createSquare();
@@ -18,7 +19,8 @@ const mouseOver = () => {
   const square = document.querySelectorAll("div#square");
   square.forEach((div) => {
     div.addEventListener("mouseover", () => {
-      div.style.backgroundColor = "black";
+      const random = Math.floor(Math.random() * 16777215).toString(16);
+      div.style.backgroundColor = "#" + random;
     });
   });
 };
